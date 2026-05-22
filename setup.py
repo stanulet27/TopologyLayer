@@ -6,7 +6,7 @@ from torch.utils.cpp_extension import CppExtension, BuildExtension
 
 this_dir = os.path.dirname(os.path.realpath(__file__))
 include_dir = this_dir + '/topologylayer/functional/persistence/'
-extra = {'cxx': ['-std=c++14']}
+extra = {'cxx': ['-std=c++17', '-w', '-DTORCH_API_INCLUDE_EXTENSION_H', '-D_GLIBCXX_USE_CXX11_ABI=1']}
 
 setup(name='topologylayer',
         packages=['topologylayer', 'topologylayer.functional',

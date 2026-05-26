@@ -16,6 +16,15 @@ void SimplicialComplex::append(std::vector<int> &x) {
   cells.push_back(x);
 }
 
+void SimplicialComplex::bulk_append(const std::vector<std::vector<int>>& xs) {
+    cells.reserve(cells.size() + xs.size());
+    for (auto& x : xs) {
+        // wrap to preserve whatever invariants append() maintains
+        std::vector<int> tmp = x;
+        append(tmp);
+    }
+}
+
 void SimplicialComplex::printComplex() {
   for (auto s : cells) {
     // use python print function

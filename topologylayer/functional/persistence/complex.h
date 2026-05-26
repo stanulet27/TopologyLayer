@@ -56,6 +56,9 @@ class SimplicialComplex{
 
     // appends simplex to complex
     void append(std::vector<int> &x);
+    
+    // appends multiple simplices in one call
+    void bulk_append(const std::vector<std::vector<int>>& xs);
 
     // prints the list of simplices
     void printComplex();

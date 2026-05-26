@@ -12,6 +12,7 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   py::class_<SimplicialComplex>(m, "SimplicialComplex")
   .def(py::init<>())
   .def("append", &SimplicialComplex::append)
+  .def("bulk_append", &SimplicialComplex::bulk_append)
   .def("initialize", &SimplicialComplex::initialize)
   .def("extendFloat", &SimplicialComplex::extend)
   .def("extendFlag", &SimplicialComplex::extend_flag)
